@@ -1,0 +1,52 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+
+.racer_table td:not(:last-child) {
+  background-color: #f3f3f3;
+  height: 50px;
+  width: 50px;
+}
+
+.racer_table td:last-child {
+	background-color: #e36c66;
+}
+
+#restart {
+	margin: 10px;
+	margin-left: 180px;
+}
+
+
+table td:active {
+	background-color: black;
+}
+
+
+.racer_table #player1_strip td.active  {
+  background-color: #88e5de;
+}
+
+.racer_table #player2_strip td.active  {
+  background-color: #ead669;
+}
+
+.finish_line
+{
+	background-color: #e36c66;
+	font-size: 50%;
+}
+
+button {
+	margin-left: 280px;
+}
+
+button:hover {
+	background-color: #858383;
+}
