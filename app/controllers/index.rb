@@ -8,6 +8,7 @@ get '/new_game/:id' do
   @user_game = PlayerGame.find_by_game_id(@game.id)
   @player_one = Player.find(@user_game.player1_id)
   @player_two = Player.find(@user_game.player2_id)
+  @page_name = "game_page"
   erb :game
 end
 
@@ -30,6 +31,7 @@ end
 
 get '/game/stats/:id' do
   @game = Game.find(params[:id])
+  @winner = Player.find_by(name: @game.winner_name)
   erb :game_stats
 end
 
@@ -37,6 +39,9 @@ post '/game/result/:id' do
 	@game = Game.find(params[:id])
 	@time_taken = Time.now - session[:time]
     @game.update(winner_name: params[:winner], loser_name: params[:loser], winning_time: @time_taken)
+    @winner = Player.find_by(name: params[:winner])
+    @winner.games_won += 1
+    @winner.save
 	redirect "/game/stats/#{@game.id}"
 end
 

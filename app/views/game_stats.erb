@@ -1,6 +1,6 @@
 <div class="container">
-<p>Winner: <%= @game.winner_name %></p>
-<p>Loser: <%= @game.loser_name%></p>
-<p>Winning Time: <%=@game.winning_time%> seconds!</p>
+<p><b>Winner:</b> <%= @game.winner_name.capitalize %> - this is win number <%=@winner.games_won%>!</p>
+<p><b>Loser:</b> <%= @game.loser_name.capitalize%></p>
+<p><b>Winning Time:</b> <%=@game.winning_time%> seconds</p>
 <p><a href ="/">back to homepage</a></p>
 </div>

@@ -1,52 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<body>
-  <!-- css -->
-  <link rel="stylesheet" type="text/css" href="public/css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="public/css/application.css">
-
-  <!-- ajax -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-  <!-- jquery -->
-  <script type ="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-  <!-- javascript -->
-    <script src="public/js/application.js"></script>
-
+ <div class="container">
  <h1>Let The Race Begin!</h1>
 
 
   <table class="racer_table">
-  <tr id="player1_strip">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><b>FINISH LINE</b></td>
-  </tr>
-  <tr id="player2_strip">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><b>FINISH LINE</b></td>
-  </tr>
+    <tr id="player1_strip">
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><b>FINISH LINE</b></td>
+    </tr>
+    <tr id="player2_strip">
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><b>FINISH LINE</b></td>
+    </tr>
   </table>
   
 
@@ -56,17 +40,15 @@
 <br>
 <div class="winning_commentary"></div>
 <br>
-<button id="restart">Race Again!</button>
+<button id="restart">Hold on, Restart!</button>
 
-    <form id="result" action="/game/result/<%=@game.id%>" method="post" style="visibility:hidden">
-        <input type="text" name="winner">
-        <input type="text" name="loser">
-    </form>
+<form id="result" action="/game/result/<%=@game.id%>" method="post" style="visibility:hidden">
+    <input type="text" name="winner">
+    <input type="text" name="loser">
+</form>
 
-    <script>
-    var player1_name = '<%= @player_one.name %>' ;
-    var player2_name = '<%= @player_two.name %>'; 
-    </script>
-
-</body>
-</html>
+<script>
+  var player1_name = "<%= @player_one.name %>";
+  var player2_name = "<%= @player_two.name %>"; 
+</script>
+</div>
